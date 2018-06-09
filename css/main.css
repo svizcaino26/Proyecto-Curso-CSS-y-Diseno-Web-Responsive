@@ -1,4 +1,44 @@
-.contenido{
+body{
   font-family: Dancing Script;
   background-color: #02010a;
+  width: 900px;
+}
+
+#contenido{
+}
+
+header{
+  margin: 0 auto;
+  background-color:  #5b7989;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  text-shadow: 2px 2px #02010a;
+}
+
+header h1{
+  font-size: 1.5em;
+  text-align: left;
+  display: inline;
+}
+
+#menuPrincipal{
+  text-align: right;
+}
+
+#menuPrincipal a{
+  color: inherit;
+}
+
+#contenido{
+  align-content: center;
+}
+
+/* Desktop screen query */
+@@media screen and (min-width: 900px) {
+
+}
+
+/* Mobile screen query */
+@@media screen and (max-width: 899px) {
+
 }
