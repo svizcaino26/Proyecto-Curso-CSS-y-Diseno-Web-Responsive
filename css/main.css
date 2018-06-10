@@ -1,44 +1,184 @@
 body{
   font-family: Dancing Script;
   background-color: #02010a;
-  width: 900px;
-}
-
-#contenido{
-}
-
-header{
-  margin: 0 auto;
-  background-color:  #5b7989;
-  color: white;
-  border-radius: 10px 10px 0px 0px;
-  text-shadow: 2px 2px #02010a;
-}
-
-header h1{
-  font-size: 1.5em;
-  text-align: left;
-  display: inline;
-}
-
-#menuPrincipal{
-  text-align: right;
-}
-
-#menuPrincipal a{
-  color: inherit;
-}
-
-#contenido{
   align-content: center;
 }
 
-/* Desktop screen query */
-@@media screen and (min-width: 900px) {
+@-webkit-keyframes slideHeader{
+  0%{margin-top: 150%;}
+  60%{margin-top: -5%;}
+  100%{margin-top: 0%;}
+}
 
+/* Desktop screen query */
+@media screen and (min-width: 900px) {
+  #contenido{
+    align-items: center;
+    width: 900px;
+  }
+  header{
+    margin: 0 auto;
+    background-color: #5b7989;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    text-shadow: 2px 2px #02010a;
+    display: flex;
+    flex-direction: row;
+    animation: slideHeader 1s;
+  }
+  header h1{
+    font-size: 1.8em;
+    text-align: left;
+    flex-grow: 1;
+    padding-left: 2%;
+  }
+  #menuPrincipal{
+    flex-grow: 1;
+    float: right;
+    text-align: right;
+    padding-right: 2%;
+    padding-top: 3%;
+  }
+  #menuPrincipal a{
+    color: white;
+  }
+  #imgCentral{
+    background-color: #82c3a6;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #imgCentral img{
+    width: 100%;
+    margin: 2%;
+  }
+  #secPanel{
+    background-color: #d5c75f;
+    border: solid 1px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+  #leftImage{
+    width: 50%;
+    margin:2%;
+  }
+  #rightImage{
+    width: 50%;
+    margin:2%;
+  }
+  footer{
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #c6d5c5;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  }
+  .piePagina{
+    flex-grow: 1;
+    width: 25%;
+    text-align: left;
+    padding-left: 2%;
+  }
 }
 
 /* Mobile screen query */
-@@media screen and (max-width: 899px) {
+@media screen and (max-width: 899px) {
+  #contenido{
+    align-items: center;
+    width: 100%;
+  }
+  header{
+    margin: 0 auto;
+    background-color: #5b7989;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    text-shadow: 2px 2px #02010a;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: slideHeader 1s;
+  }
+  header h1{
+    font-size: 1.8em;
+    text-align: center;
+    width: 100%;
+  }
+  #menuPrincipal{
+    text-align: center;
+    width: 100%;
+  }
+  #menuPrincipal a{
+    color: white;
+  }
+  #imgCentral{
+    background-color: #82c3a6;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #imgCentral img{
+    width: 100%;
+    margin: 2%;
+  }
+  #secPanel{
+    background-color: #d5c75f;
+    border: solid 1px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  #leftImage{
+    width: 100%;
+    margin:2%;
+  }
+  #rightImage{
+    width: 100%;
+    margin:2%;
+  }
+  footer{
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #c6d5c5;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .piePagina{
+    width: 100%;
+  }
+}
+#leftImage:hover{
+  animation: anim_leftPan 1s;
+  animation-direction: alternate;
+}
 
+@-webkit-keyframes anim_leftPan{
+  33%{}
+  66%{
+    transform: rotate(10deg);
+    box-shadow: 2px 2px 5px #82c3a6;
+    border: 2px soiid;
+  }
+  100%{}
+}
+
+#rightImage:hover{
+  animation: anim_rightPan 1s;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes anim_rightPan{
+  33%{}
+  66%{
+    border: 2px solid;
+    transform: translate(20px, -5px);
+    box-shadow: 2px 2px 5px #82c3a6;
+  }
+  100%{}
 }
