@@ -1,7 +1,7 @@
 body{
   font-family: Dancing Script;
   background-color: #02010a;
-  align-content: center;
+  text-align: center;
 }
 
 @-webkit-keyframes slideHeader{
@@ -15,6 +15,7 @@ body{
   #contenido{
     align-items: center;
     width: 900px;
+    margin: 0 auto;
   }
   header{
     margin: 0 auto;
@@ -41,6 +42,7 @@ body{
   }
   #menuPrincipal a{
     color: white;
+    font-size: 1.2em;
   }
   #imgCentral{
     background-color: #82c3a6;
@@ -60,13 +62,17 @@ body{
     flex-direction: row;
     margin: 0 auto;
   }
+  #lPan{
+    padding: 2% 1% 2% 2%;
+  }
+  #rPan{
+    padding: 2% 2% 1% 2%;
+  }
   #leftImage{
-    width: 50%;
-    margin:2%;
+    width: 100%;
   }
   #rightImage{
-    width: 50%;
-    margin:2%;
+    width: 100%;
   }
   footer{
     color: black;
@@ -83,6 +89,11 @@ body{
     text-align: left;
     padding-left: 2%;
   }
+  #secPanel div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Mobile screen query */
@@ -90,6 +101,7 @@ body{
   #contenido{
     align-items: center;
     width: 100%;
+    margin: 0 auto;
   }
   header{
     margin: 0 auto;
@@ -113,6 +125,7 @@ body{
   }
   #menuPrincipal a{
     color: white;
+    font-size: 1.2em;
   }
   #imgCentral{
     background-color: #82c3a6;
@@ -131,14 +144,19 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 1%;
+
+  }
+  #secPanel div{
+    width: 98%;
   }
   #leftImage{
-    width: 100%;
-    margin:2%;
+    width: 98%;
+    margin:0 auto;
   }
   #rightImage{
     width: 100%;
-    margin:2%;
+    margin:0 auto;
   }
   footer{
     color: black;
@@ -154,31 +172,39 @@ body{
   }
 }
 #leftImage:hover{
-  animation: anim_leftPan 1s;
-  animation-direction: alternate;
+  animation: anim_leftPan infinite;
+  animation-duration: 1s;
+  animation-direction: normal;
 }
 
 @-webkit-keyframes anim_leftPan{
-  33%{}
-  66%{
+  0%{transform: rotate(0deg);}
+  50%{
     transform: rotate(10deg);
     box-shadow: 2px 2px 5px #82c3a6;
     border: 2px soiid;
   }
-  100%{}
+  100%{transform: rotate(0deg);}
 }
 
 #rightImage:hover{
-  animation: anim_rightPan 1s;
-  animation-direction: alternate;
+  margin: 0 auto;
+  padding: 0 ;
+  animation: anim_rightPan infinite;
+  animation-duration: 1s;
+  animation-direction:normal;
 }
 
 @-webkit-keyframes anim_rightPan{
-  33%{}
-  66%{
+  0%{}
+  50%{
     border: 2px solid;
     transform: translate(20px, -5px);
     box-shadow: 2px 2px 5px #82c3a6;
   }
-  100%{}
+  100%{transform: translate(0,0);}
+}
+
+#secPanel a{
+  color: black;
 }
